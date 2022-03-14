@@ -17,15 +17,17 @@ function addToDo() {
     }
     else {
         let li = document.createElement('li');
-        let cancel = document.createElement('h3');
-        cancel.textContent = "X";
+        let trash = document.createElement('img');
+        trash.src = 'src/img/trash.svg'
+        // trash.style.width = "1.5rem";
+        trash.className = 'trashBtn';
         li.textContent = todoMessage;
         list.appendChild(li)
-        li.appendChild(cancel)
+        li.appendChild(trash)
         warnAlert.innerHTML = "";
         input.value = "";
         
-        cancel.addEventListener('click', (e) => {
+        trash.addEventListener('click', (e) => {
         list.removeChild(e.target.parentNode)
     });
     }
