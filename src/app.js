@@ -30,13 +30,11 @@ function addToDo() {
         trash.addEventListener('click', (e) => {
         list.removeChild(e.target.parentNode)
     });
-    }
-    
+    } 
 }
 
-addBtn.addEventListener("click", addToDo)
-document.addEventListener("keyup", (event) => {
-    if (event.keyCode == 13) {
+document.addEventListener("keydown", (event) => {
+    if (event.key == 'Enter') {
         addToDo()
     }
 })
